@@ -14,7 +14,7 @@ game = Game("JAZZ")
 def new_game(word):
   global game
   game = Game(word)
-  return 200
+  return "", 200
 
 @app.route('/guess', methods=['POST'])
 def guess():
