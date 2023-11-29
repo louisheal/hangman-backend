@@ -35,7 +35,7 @@ class Game:
   def get_word(self) -> str:
     guessed_word = ""
     for letter in self.__word:
-      if letter.islpha() and letter not in self.__guessed_letters:
+      if letter.isalpha() and letter not in self.__guessed_letters:
         guessed_word += '_'
       elif letter == ' ':
         guessed_word += '\n'
