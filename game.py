@@ -35,12 +35,12 @@ class Game:
   def get_word(self) -> str:
     guessed_word = ""
     for letter in self.__word:
-      if letter in self.__guessed_letters:
-        guessed_word += letter
-      if not letter.isalpha() or letter in self.__guessed_letters:
-        guessed_word += letter
-      else:
+      if letter.islpha() and letter not in self.__guessed_letters:
         guessed_word += '_'
+      elif letter == ' ':
+        guessed_word += '\n'
+      else:
+        guessed_word += letter
       guessed_word += ' '
     return guessed_word[:-1]
   
