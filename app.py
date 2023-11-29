@@ -26,14 +26,14 @@ def guess():
     return "", 400
   if not letter.isalpha() or len(letter) != 1:
     return "", 400
-  
+
   game.make_guess(letter.upper())
   return "", 200
 
 @app.route('/status')
 def get_state():
   global game
-  return {'word': game.get_word(), 'status': game.get_status().value}
+  return {'word': game.get_word(), 'lives': game.get_lives(), 'status': game.get_status().value}
 
 if __name__ == '__main__':
   app.run(debug=True)
